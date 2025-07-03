@@ -34,3 +34,4 @@ jobs:
       - name: Aplicar Terraform (EC2 Consumer)
         working-directory: terraform
         run: terraform apply -auto-approve
+#1

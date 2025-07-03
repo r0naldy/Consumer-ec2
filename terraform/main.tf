@@ -27,7 +27,7 @@ resource "aws_route_table_association" "a" {
   route_table_id = aws_route_table.rt.id
 }
 
-# Seguridad
+
 resource "aws_security_group" "allow_http" {
   name   = "allow_http"
   vpc_id = aws_vpc.main.id
@@ -54,7 +54,6 @@ resource "aws_security_group" "allow_http" {
   }
 }
 
-# IAM Role para EC2 con acceso a S3.
 resource "aws_iam_role" "ec2_role" {
   name = "ec2_s3_access_role"
 
@@ -88,7 +87,7 @@ resource "aws_iam_role_policy" "s3_access" {
 }
 
 resource "aws_iam_instance_profile" "ec2_profile_cloud_computing" {
-  name = "ec2_profile_cloud_computing_prueba5"  
+  name = "ec2_profile_cloud_computing_prueba_1"  
   role = aws_iam_role.ec2_role.name
 }
 
