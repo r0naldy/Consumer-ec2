@@ -78,8 +78,8 @@ resource "aws_iam_role_policy" "s3_access" {
         Effect = "Allow",
         Action = ["s3:GetObject", "s3:ListBucket"],
         Resource = [
-          "arn:aws:s3:::${var.bucket_name}",
-          "arn:aws:s3:::${var.bucket_name}/*"
+          aws_s3_bucket.json_bucket.arn,
+          "${aws_s3_bucket.json_bucket.arn}/*"
         ]
       }
     ]
@@ -106,6 +106,6 @@ resource "aws_instance" "consumer_ec2" {
   })
 
   tags = {
-    Name = "consumer-api"
+    Name = "ec2-consumer-api"
   }
 }
