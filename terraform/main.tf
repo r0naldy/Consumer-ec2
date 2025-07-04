@@ -87,7 +87,7 @@ resource "aws_iam_role_policy" "s3_access" {
 }
 
 resource "aws_iam_instance_profile" "ec2_profile_cloud_computing" {
-  name = "ec2_profile_cloud_computing_prueba_1"  
+  name = "ec2_profile_cloud_computing_prueba_4"  
   role = aws_iam_role.ec2_role.name
 }
 
@@ -106,6 +106,6 @@ resource "aws_instance" "consumer_ec2" {
   })
 
   tags = {
-    Name = "ec2-consumer-api"
+    Name = "consumer-api"
   }
 }
